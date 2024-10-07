@@ -1,0 +1,18 @@
+<!-- Botão para abrir o sidebar com a imagem -->
+<button class="open-sidebar-btn" [ngClass]="{ 'moved': isSidebarOpen }" (click)="toggleSidebar()">
+  <img *ngIf="!isSidebarOpen" src="https://i.imgur.com/HQWS6dK.png" alt="Abrir Menu">
+  <img *ngIf="isSidebarOpen" src="https://i.imgur.com/Ahalong.png" alt="Fechar Menu">
+</button>
+
+<!-- Sidebar -->
+<div class="sidebar" [ngClass]="{ 'active': isSidebarOpen }">
+  <ul>
+    <li><a class="sidebar-btn" routerLink="/kanban">Kanban Pessoal</a></li>
+    <li><a class="sidebar-btn meus-projetos" routerLink="/meus-projetos">Meus Projetos</a></li>
+    <li><a class="sidebar-btn" routerLink="/meus-pdcas">Meus PDCAs</a></li>
+  </ul>
+</div>
+
+<!-- Conteúdo principal -->
+<velora-header></velora-header>
+<router-outlet></router-outlet>  <!-- Renderiza a rota ativa -->

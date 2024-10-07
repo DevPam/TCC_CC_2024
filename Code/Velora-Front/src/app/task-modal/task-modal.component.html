@@ -1,0 +1,66 @@
+<div class="modal-background"></div>
+
+<!-- Contêiner principal do modal -->
+<div class="modal-container">
+
+  <!-- Container textos Criar e Etapa -->
+  <div class="header-container">
+    <h2 class="modal-title">{{ isEdit ? 'Editar' : 'Criar' }}</h2>
+
+    <div class="etapa-container">
+      <label for="task-category">ETAPA:</label>
+      <select id="task-category" [(ngModel)]="data.category">
+        <option value="todo">TO DO</option>
+        <option value="doing">DOING</option>
+        <option value="done">DONE</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Container campos Título, Data e Prioridade -->
+  <div class="fields-container">
+    <!-- Campo Título -->
+    <div class="task-title-container">
+      <label for="task-title">TÍTULO:</label>
+      <input id="task-title" [(ngModel)]="taskTitle" placeholder="Digite o título da task" required />
+      <div *ngIf="showError && !taskTitle" class="error-message">O título é obrigatório.</div>
+    </div>
+
+    <!-- Campo Data e Prioridade -->
+    <div class="date-priority-row">
+      <!-- Campo Data -->
+      <div class="date-container">
+        <i class="material-icons">event</i> <!-- Ícone de calendário -->
+        <input id="task-date" type="date" [(ngModel)]="taskDate" placeholder="..." />
+      </div>
+
+      <!-- Campo Prioridade -->
+      <div class="priority-container">
+        <label for="task-priority">PRIORIDADE:</label>
+        <select id="task-priority" [(ngModel)]="taskPriority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+        <!-- Contêiner De: e campo Pessoal -->
+        <div class="de-personal-container">
+          <label for="de">De:</label>
+          <input type="text" id="de" value="Pessoal" readonly />
+        </div>
+      </div>
+    </div>
+
+    <!-- Campo Adicionais -->
+    <div class="adicionais-container">
+      <label for="task-info">ADICIONAIS:</label>
+      <textarea id="task-info" [(ngModel)]="taskInfo" placeholder="Adicione mais detalhes..."></textarea>
+    </div>
+  </div>
+
+  <!-- Container botões salvar e deletar -->
+  <div class="button-container">
+    <button class="delete-button" *ngIf="isEdit" (click)="deleteTask()">Deletar</button>
+    <button class="save-button" (click)="save()">Salvar</button>
+  </div>
+</div>

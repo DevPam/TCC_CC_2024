@@ -1,0 +1,66 @@
+
+<div *ngIf="isModalOpen" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" (click)="closeModal()">&times;</span>
+      <h2>Adicionar Título</h2>
+      <input [(ngModel)]="titulo" placeholder="Insira o título" />
+      <button (click)="saveTitle()">Salvar</button>
+    </div>
+  </div>
+  
+  <div class="right-corner">
+    <strong>PDCA - APP GERAL</strong>
+  </div>
+  
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="position: relative; display: inline-block;">
+      <img src="https://i.imgur.com/5ZTDz9d.png" alt="PDCA Image 1" style="width: 100%; max-width: 100%;">
+  
+      <!-- Botões + -->
+      <button (click)="openModal('todo')" style="position: absolute; top: 20%; left: 30%; transform: translate(-50%, -50%); font-size: 35px; background-color: transparent; border-color: transparent; font-weight: bold; color: rgb(199, 97, 97); cursor:pointer">+</button>
+      <button (click)="openModal('doing')" style="position: absolute; top: 20%; right: 30%; transform: translate(50%, -50%); font-size: 35px; background-color: transparent; border-color: transparent; font-weight: bold; color: rgb(103, 172, 212); cursor:pointer">+</button>
+      <button (click)="openModal('done')" style="position: absolute; bottom: 20%; left: 30%; transform: translate(-50%, 50%); font-size: 35px; background-color: transparent; border-color: transparent; font-weight: bold; color: rgb(99, 194, 36); cursor:pointer">+</button>
+      <button (click)="openModal('blocked')" style="position: absolute; bottom: 20%; right: 30%; transform: translate(50%, 50%); font-size: 35px; background-color: transparent; border-color: transparent; font-weight: bold; color: rgb(189, 168, 49); cursor:pointer">+</button>
+  
+      <!-- Coluna A -->
+      <div style="position: absolute; top: 35%; left: 43%; transform: translate(-50%, -50%); width: 150px; height: 200px; border: none; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 55px;">
+        <div class="column" style="margin-top: -25%; margin-bottom: -25%; margin-left: -40%; margin-right: -40%; width: 120%; overflow-y: auto; overflow-x: hidden;">
+          <div *ngFor="let task of todoTasks; let i = index" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; width: 100%;">
+            <button (click)="deleteTask(i, 'todo')" style="background-color: transparent; color: red; border: none; cursor: pointer; font-size: 18px; font-weight: bold; width: 20px; text-align: left; padding: 0;">X</button>
+            <p style="margin: 0; text-align: right; flex-grow: 1; font-size: 1.2rem; font-weight: 500; background-color: #fcfcfc; border-radius: 8px">{{ task }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Coluna P -->
+      <div style="position: absolute; top: 35%; right: 43%; transform: translate(50%, -50%); width: 150px; height: 200px; border: none; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 55px;">
+        <div class="column" style="margin-top: -25%; margin-bottom: -25%; margin-left: -40%; margin-right: -40%; width: 120%; overflow-y: auto; overflow-x: hidden; direction: rtl;">
+          <div *ngFor="let task of doingTasks; let i = index" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; width: 100%; direction: ltr;">
+            <p style="margin: 0; text-align: left; flex-grow: 1; font-size: 1.2rem; font-weight: 500; background-color: #fcfcfc; border-radius: 8px">{{ task }}</p>
+            <button (click)="deleteTask(i, 'doing')" style="background-color: transparent; color: red; border: none; cursor: pointer; font-size: 18px; font-weight: bold; width: 20px; text-align: right; padding: 0;">X</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Coluna C -->
+      <div style="position: absolute; bottom: 35%; left: 43%; transform: translate(-50%, 50%); width: 150px; height: 200px; border: none; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 55px;">
+        <div class="column" style="margin-top: -25%; margin-bottom: -25%; margin-left: -40%; margin-right: -40%; width: 120%; overflow-y: auto; overflow-x: hidden;">
+          <div *ngFor="let task of doneTasks; let i = index" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; width: 100%;">
+            <button (click)="deleteTask(i, 'done')" style="background-color: transparent; color: red; border: none; cursor: pointer; font-size: 18px; font-weight: bold; width: 20px; text-align: left; padding: 0;">X</button>
+            <p style="margin: 0; text-align: right; flex-grow: 1; font-size: 1.2rem; font-weight: 500; background-color: #fcfcfc; border-radius: 8px">{{ task }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Coluna D -->
+      <div style="position: absolute; bottom: 35%; right: 43%; transform: translate(50%, 50%); width: 150px; height: 200px; border: none; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 55px;">
+        <div class="column" style="margin-top: -25%; margin-bottom: -25%; margin-left: -40%; margin-right: -40%; width: 120%; overflow-y: auto; overflow-x: hidden; direction: rtl;">
+          <div *ngFor="let task of blockedTasks; let i = index" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; width: 100%; direction: ltr;">
+            <p style="margin: 0; text-align: left; flex-grow: 1; font-size: 1.2rem; font-weight: 500; background-color: #fcfcfc; border-radius: 8px">{{ task }}</p>
+            <button (click)="deleteTask(i, 'blocked')" style="background-color: transparent; color: red; border: none; cursor: pointer; font-size: 18px; font-weight: bold; width: 20px; text-align: right; padding: 0;">X</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

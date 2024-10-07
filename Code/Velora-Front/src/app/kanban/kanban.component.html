@@ -1,0 +1,70 @@
+<div class="right-corner">
+  <strong>Kanban Pessoal</strong>
+</div>
+<div class="kanban-container">
+  <div class="kanban-columns">
+    
+    <!-- Coluna To Do -->
+    <div class="column">
+      <h3 class="to-do">TO DO</h3>
+      <button class="add-button" (click)="openDialog('todo')">Add +</button>
+
+      <div *ngFor="let task of toDoTasks; let i = index" class="card">
+        <button class="task-button" (click)="openDialog('todo', task)">{{ task.title }}</button>
+        <span>{{ task.date }}</span>
+        <div class="card-footer">
+          <div class="priority-container">
+            <span [ngClass]="{
+                'low-priority': task.priority === 'Low',
+                'medium-priority': task.priority === 'Medium',
+                'high-priority': task.priority === 'High'
+              }" class="priority-indicator"></span>
+            <span>{{ task.priority }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coluna Doing -->
+    <div class="column">
+      <h3 class="doing">DOING</h3>
+      <button class="add-button" (click)="openDialog('doing')">Add +</button>
+
+      <div *ngFor="let task of doingTasks; let i = index" class="card">
+        <button class="task-button" (click)="openDialog('doing', task)">{{ task.title }}</button>
+        <span>{{ task.date }}</span>
+        <div class="card-footer">
+          <div class="priority-container">
+            <span [ngClass]="{
+                'low-priority': task.priority === 'Low',
+                'medium-priority': task.priority === 'Medium',
+                'high-priority': task.priority === 'High'
+              }" class="priority-indicator"></span>
+            <span>{{ task.priority }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coluna Done -->
+    <div class="column">
+      <h3 class="done">DONE</h3>
+      <button class="add-button" (click)="openDialog('done')">Add +</button>
+
+      <div *ngFor="let task of doneTasks; let i = index" class="card">
+        <button class="task-button" (click)="openDialog('done', task)">{{ task.title }}</button>
+        <span>{{ task.date }}</span>
+        <div class="card-footer">
+          <div class="priority-container">
+            <span [ngClass]="{
+                'low-priority': task.priority === 'Low',
+                'medium-priority': task.priority === 'Medium',
+                'high-priority': task.priority === 'High'
+              }" class="priority-indicator"></span>
+            <span>{{ task.priority }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

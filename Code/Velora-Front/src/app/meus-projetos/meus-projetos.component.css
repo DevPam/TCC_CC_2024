@@ -1,0 +1,15 @@
+.right-corner {
+    position: absolute;      
+    top: 150px;               
+    right: 20px;            
+    font-size: 35px;
+    color: #c69b00;
+    font-family: 'Amiko', sans-serif;
+    font-weight: bold;
+    text-shadow: 0.1px 0.1px 0 #c69b00, 
+                 -0.1px 0.1px 0 #c69b00,
+                 0.1px -0.1px 0 #c69b00,
+                 -0.1px -0.1px 0 #c69b00;
+    letter-spacing: 1px;
+  }
+  

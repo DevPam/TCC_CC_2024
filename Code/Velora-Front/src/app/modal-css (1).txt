@@ -1,0 +1,225 @@
+/* Estilo geral do modal */
+.mat-dialog-container {
+  width: 60vw;
+  max-width: 900px;
+  height: auto;
+  max-height: 80vh;
+  font-family: 'Amiko', sans-serif;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fcfcfc;
+  position: relative;
+}
+
+/* Quadrado de Fundo */
+.modal-background {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 90%;
+  height: 67%;
+  background-color: #fdfaf1;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+/* Estilo do contêiner principal */
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 6%;
+  font-family: "Amiko", sans-serif;
+  z-index: 1; 
+  position: relative;
+}
+
+/* Título e Etapa em uma única linha */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #242424;
+}
+
+.etapa-container {
+  display: flex;
+  align-items: center;
+}
+
+.etapa-container label {
+  font-weight: bold;
+  color: #d1a32b;
+  margin-right: 10px;
+}
+
+/* Estilo do select (combobox) do campo Etapa */
+.etapa-container select {
+  width: 100px;
+  padding: 3px;
+  font-size: 1.1rem;
+  color: #3f3d56;
+  background-color: #fff9f0;
+  border: 2px solid #d1a32b;
+  border-radius: 25px;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 15px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+/* Estilo dos campos Título, Prioridade, Data e Adicionais */
+.fields-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+/* Ajustes para o campo Título */
+.task-title-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.task-title-container label {
+  font-weight: bold;
+  color: #d1a32b;
+}
+
+.task-title-container input {
+  width: 90%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #d4d4d4;
+}
+
+/* Campo Data e Prioridade em linha */
+.date-priority-row {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 5px;
+  align-items: center; /* Alinha os itens no centro verticalmente */
+}
+
+/* Estilo para o campo Data */
+.date-container {
+  display: flex;
+    align-items: center;
+    width: 20%;
+    margin-right: 10%;
+}
+
+.date-container label {
+  font-weight: bold;
+  color: #d1a32b;
+  margin-right: 10px; /* Espaço entre o label e o input */
+}
+
+.date-container input {
+  width: 100%;
+  padding: 9px;
+  font-size: 1rem;
+  border: 1px solid #d4d4d4;
+  border-radius: 25px;
+}
+
+/* Estilo para o campo Prioridade */
+.priority-container {
+  display: flex;
+  align-items: center; /* Garante que o label e o input fiquem na mesma linha */
+  width: 15%;
+}
+
+.priority-container label {
+  font-weight: bold;
+  color: #d1a32b;
+  margin-right: 10px; /* Espaço entre o label e o input */
+}
+
+.priority-container select {
+  padding: 10px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 1px solid #d4d4d4;
+    background-color: #ffffff;
+
+}
+
+/* Estilo para o campo Adicionais */
+.adicionais-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.adicionais-container label {
+  font-weight: bold;
+  color: #d1a32b;
+}
+
+/* Especificidade maior no seletor do campo adicionais */
+.adicionais-container textarea#task-info {
+  width: 88%;
+  height: 120px; /* Ajusta a altura do campo de adicionais */
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid #d4d4d4;
+  background-color: #f9f9f9;
+  resize: none;
+  overflow-y: auto;
+}
+
+/* Botão de salvar */
+.save-button {
+  background-color: #0a8fb0;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: auto;
+}
+
+.save-button:hover {
+  background-color: #076279;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  color: #c49a08;
+}

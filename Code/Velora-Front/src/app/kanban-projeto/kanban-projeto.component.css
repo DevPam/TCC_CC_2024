@@ -1,0 +1,162 @@
+.right-corner {
+    position: absolute;      
+    top: 150px;               
+    right: 20px;            
+    font-size: 35px;
+    color: #c69b00;
+    font-family: 'Amiko', sans-serif;
+    font-weight: bold;
+    text-shadow: 0.1px 0.1px 0 #c69b00, 
+                 -0.1px 0.1px 0 #c69b00,
+                 0.1px -0.1px 0 #c69b00,
+                 -0.1px -0.1px 0 #c69b00;
+    letter-spacing: 1px;
+  }
+  
+  /* Container centralizado com borda */
+  .kanban-container {
+    background-color: #d4e7eb;
+    padding: 20px;
+    width: 85vw;
+    height: 70vh; /* Tamanho do quadro azul */
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Layout da coluna */
+  .kanban-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100%; /* As colunas ocupam toda a altura do contêiner azul */
+  }
+  
+  /* Estilo de cada coluna */
+  .column {
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 100%; 
+    overflow-y: auto; 
+    position: relative;
+  }
+  
+  /*deixando o scroll mais bonito*/
+  .column::-webkit-scrollbar {
+    width: 5px; 
+  }
+  .column::-webkit-scrollbar-thumb {
+    background-color: #d4d4d4; 
+    border-radius: 4px; 
+  }
+  .column::-webkit-scrollbar-track {
+    background: #fcfcfc; 
+    border-radius: 4px; 
+  }
+  
+  .task-button {
+    background-color: transparent;
+    border: none;
+    color: #007BFF;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    display: block; /* Garante que o botão ocupe a linha toda */
+    margin-bottom: 5px; /* Espaçamento entre o botão e a data */
+  }
+  
+  .task-button:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para a data da task */
+  .task-date {
+    font-size: 0.9rem;
+    color: #666;
+    display: block; /* Garante que a data apareça em uma linha separada */
+  }
+  
+  /* Cartões */
+  .card {
+    background-color: #fcfcfc;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    border: 1px solid #d4d4d4;
+  }
+  
+  /* Footer do card */
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+  }
+  
+  /* Estilos dos títulos em cima de cada coluna */
+  .column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-decoration: underline; 
+  }
+  
+  .column h3.to-do {
+    color: #007BFF; /* Cor azul para "to do" */
+  }
+  
+  .column h3.doing {
+    color: #c69b00; /* Cor dourada para "doing" */
+  }
+  
+  .column h3.done {
+    color: #008000; /* Cor verde para "done" */
+  }
+  
+  /* Botão de adicionar novo item */
+  .add-button {
+    background-color: transparent;
+    color: #A9A9A9;
+    border: none;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    text-align: right;
+    cursor: pointer;
+    position: absolute; 
+    top: 40px;
+    right: 20px;
+    text-decoration: underline;
+  }
+  
+  /* Indicador de prioridade */
+  .priority-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  
+  .low-priority {
+    background-color: #0b7247;
+  }
+  
+  .medium-priority {
+    background-color: #c69b00;
+  }
+  
+  .high-priority {
+    background-color: #a33232;
+  }
+  
+
+  

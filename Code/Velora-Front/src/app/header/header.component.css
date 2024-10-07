@@ -1,0 +1,50 @@
+body {
+    font-family: 'Amiko', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #fcfcfc;
+    padding: 6px 20px;
+}
+
+.logo img {
+    height: 100px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+    margin-left: auto; 
+    margin-right: 45px; 
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer; /* Garante que o cursor seja uma mão ao passar sobre os links */
+}
+
+.perfil-btn {
+    background-color: #9b56a6;
+    color: #fcfcfc;
+    font-size: 18px;
+    padding: 3px 43px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra aplicada */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.perfil-btn:hover {
+    background-color: rgb(108, 49, 138);
+}
