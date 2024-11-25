@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Velora_Back.props" />
+</Project>
